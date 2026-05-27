@@ -489,33 +489,19 @@ function doSub(){
   btn.textContent='신청 중...';
   btn.disabled=true;
 
-  var data=new FormData();
-  data.append('_subject','[간병인보험] 상담 신청 - '+n);
-  data.append('이름', n);
-  data.append('연락처', p);
-  data.append('생년월일', b);
-  data.append('성별', g);
-  data.append('상품', '한화손보 간병인사용일당');
+  var url = 'https://script.google.com/macros/s/AKfycbyhbtnO-svWEK4f6KoyZAtfJpT3oTpMUE_5EPMXu5qktb83byfkjWwMWB7OQfKWFeky/exec'
+    + '?name=' + encodeURIComponent(n)
+    + '&phone=' + encodeURIComponent(p)
+    + '&age=' + encodeURIComponent(b)
+    + '&message=' + encodeURIComponent('간병인보험 상담 - ' + g);
 
-  fetch('https://formspree.io/f/mbdbonzl',{
-    method:'POST',
-    body:data,
-    headers:{'Accept':'application/json'}
-  }).then(function(r){
-    if(r.ok){
-      document.getElementById('mainPage').style.display='none';
-      document.getElementById('donePage').style.display='block';
-      window.scrollTo(0,0);
-    } else {
-      alert('오류가 발생했습니다. 카카오톡으로 문의해주세요.');
-      btn.textContent='보험료 확인하기';
-      btn.disabled=false;
-    }
-  }).catch(function(){
-    alert('네트워크 오류입니다. 카카오톡으로 문의해주세요.');
-    btn.textContent='보험료 확인하기';
-    btn.disabled=false;
-  });
+  var img = new Image();
+  img.onload = img.onerror = function(){
+    document.getElementById('mainPage').style.display='none';
+    document.getElementById('donePage').style.display='block';
+    window.scrollTo(0,0);
+  };
+  img.src = url;
 }
 </script>
 </body>
