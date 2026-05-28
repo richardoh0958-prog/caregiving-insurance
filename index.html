@@ -71,8 +71,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f0f2f5;color:#111;font-si
 .agree-row label{font-size:10px;color:#aaa;line-height:1.6;cursor:pointer}
 .cta-main{width:100%;background:#ff6600;border:none;border-radius:10px;padding:16px;color:#fff;font-size:16px;font-weight:700;font-family:'Noto Sans KR',sans-serif;cursor:pointer;transition:background 0.2s;letter-spacing:-0.3px}
 .cta-main:hover{background:#e05500}
-.cta-kakao{width:100%;margin-top:8px;background:#FEE500;border:none;border-radius:10px;padding:14px;color:#3A1D1D;font-size:15px;font-weight:700;font-family:'Noto Sans KR',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background 0.15s}
-.cta-kakao:hover{background:#f5d900}
+
 .form-legal{font-size:9px;color:#ccc;text-align:center;margin-top:10px;line-height:1.6}
 
 /* NOTICE */
@@ -158,7 +157,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f0f2f5;color:#111;font-si
 .bt-sub{font-size:13px;color:#777}
 .bottom-btns{display:flex;gap:12px;flex-shrink:0}
 .bottom-btns .cta-main{width:200px;padding:14px 20px;font-size:15px}
-.bottom-btns .cta-kakao{width:200px;padding:13px 20px;font-size:14px}
+
 
 .footer{background:#222;padding:24px 40px;text-align:center}
 .footer p{font-size:11px;color:#888;line-height:1.8}
@@ -188,7 +187,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f0f2f5;color:#111;font-si
   .bottom-cta{padding:24px 20px}
   .bottom-cta-inner{flex-direction:column;text-align:center}
   .bottom-btns{flex-direction:column;width:100%}
-  .bottom-btns .cta-main,.bottom-btns .cta-kakao{width:100%}
+
   .tabs{padding:0 20px}
   .tab{padding:14px 16px;font-size:13px}
   .notice{padding:12px 20px}
@@ -273,10 +272,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f0f2f5;color:#111;font-si
             <label for="ag1">개인정보 수집·이용에 동의합니다. 수집된 정보는 보험 상담 목적으로만 사용되며 상담 완료 후 파기됩니다.</label>
           </div>
           <button class="cta-main" onclick="doSub()">보험료 확인하기</button>
-          <button class="cta-kakao" onclick="openKakao()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#3A1D1D"><path d="M12 3C6.477 3 2 6.477 2 10.8c0 2.7 1.6 5.1 4 6.6l-1 3.6 4.2-2.8c.9.2 1.8.3 2.8.3 5.523 0 10-3.477 10-7.7S17.523 3 12 3z"/></svg>
-            카카오톡 상담하기
-          </button>
+
           <div class="form-legal">개인정보 수집·이용 동의 후 상담이 진행됩니다</div>
         </div>
       </div>
@@ -443,10 +439,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f0f2f5;color:#111;font-si
       </div>
       <div class="bottom-btns">
         <button class="cta-main" onclick="document.getElementById('formSection').scrollIntoView({behavior:'smooth'})">보험료 확인하기</button>
-        <button class="cta-kakao" onclick="openKakao()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#3A1D1D"><path d="M12 3C6.477 3 2 6.477 2 10.8c0 2.7 1.6 5.1 4 6.6l-1 3.6 4.2-2.8c.9.2 1.8.3 2.8.3 5.523 0 10-3.477 10-7.7S17.523 3 12 3z"/></svg>
-          카카오톡 상담하기
-        </button>
+
       </div>
     </div>
   </div>
@@ -473,7 +466,7 @@ var gv='M';
 function setG(g){gv=g;document.getElementById('gM').className='gbtn'+(g==='M'?' on':'');document.getElementById('gF').className='gbtn'+(g==='F'?' on':'')}
 var tabs=[document.getElementById('t0'),document.getElementById('t1'),document.getElementById('t2')];
 function setTab(i,el){tabs.forEach(function(t){t.style.display='none'});tabs[i].style.display='block';document.querySelectorAll('.tab').forEach(function(t){t.className='tab'});el.className='tab on'}
-function openKakao(){window.open('https://open.kakao.com/o/sSydv3vi','_blank')}
+
 function doSub(){
   var b=document.getElementById('fbirth').value.trim();
   var p=document.getElementById('fphone').value.trim();
